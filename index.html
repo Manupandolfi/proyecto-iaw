@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <script type="text/javascript" src="js/funciones.js"></script>
     <script type="text/javascript" src="js/datos.js"></script>
+    <script type="text/javascript" src="js/mapa.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mapa.css" rel="stylesheet">
     <link href="css/filtros.css" rel="stylesheet">
@@ -54,7 +55,7 @@
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
-    </nav> 
+    </nav>
     <!-- FIN HEADER -->
 
     <!-- CONTENIDO GENERAL -->
@@ -72,7 +73,7 @@
                   <label class="label-filtros">Nombre</label>
                   <button id="btn-nombre" onclick=btnNombre() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
                   <input id="nombre" type="text" class="form-control get-out" placeholder="Cancha" autofocus>
-                </div> 
+                </div>
                 <div class="filtro">
                   <label class="label-filtros">Distancia:&nbsp;</label><label id="valor-distancia"></label>
                   <button id="btn-distancia" onclick=btnDistancia() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
@@ -119,12 +120,14 @@
                 </div>
                 <button type="button" onclick=buscar() class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>
               </div>
-            </div>            
+            </div>
           </div>
           <!-- DIV DEL MAPA -->
-          <div class="col-xs-12 col-md-6" id="mapa-container">
-            <img src="res/map.jpg" alt="Mapa de Google Maps" id="mapa">
-          </div>
+          <div class="col-xs-12 col-md-6 mapa" id="map" onload="cargar()">
+              <script async defer
+                 src="https://maps.googleapis.com/maps/api/js?y=AIzaSyDChLzQKzUY0LDeON8ruWw0QdKdbJdyqNQ&callback=initMap">
+              </script>
+            </div>
           <!-- DIV DE LOS RESULTADOS -->
           <div class="col-xs-12 col-md-3" id="resultados-container">
             <div class="panel panel-default ">
@@ -138,13 +141,13 @@
                 <!-- Aqui iran los resultados cargados dinamicamente via js -->
               </ul>
             </div>
-            
+
           </div>
         </div>
       </div>
     </div>
     <!-- FIN CONTAINER GENERAL -->
-    
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
