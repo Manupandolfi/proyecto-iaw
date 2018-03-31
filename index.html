@@ -9,9 +9,11 @@
 
     <!-- Bootstrap -->
     <script type="text/javascript" src="js/funciones.js"></script>
+    <script type="text/javascript" src="js/datos.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mapa.css" rel="stylesheet">
     <link href="css/filtros.css" rel="stylesheet">
+    <link href="css/resultados.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -87,32 +89,6 @@
                     <input class="form-control input-tamanio" id="input-tamanio" type="text" value=5 readonly>
                     <button id="btn-mas" class="btn btn-default btn-mas" onclick=mas()><span class="glyphicon glyphicon-plus"></span></button>
                   </div>
-
-                  <!--<div>
-                    <select name="tamanio">
-                      <option value="0" class="form-control"></option>
-                      <option value="4" class="form-control">4</option>
-                      <option value="5" class="form-control">5</option>
-                      <option value="6" class="form-control">6</option>
-                      <option value="7" class="form-control">7</option>
-                      <option value="8" class="form-control">8</option>
-                      <option value="9" class="form-control">9</option>
-                      <option value="10" class="form-control">10</option>
-                      <option value="11" class="form-control">11</option>
-                   </select>
-                  </div> -->    
-                  <!--              
-                  <div class="btn-group botones-filtro">
-                    <button type="button" class="btn btn-default">4</button>
-                    <button type="button" class="btn btn-default">5</button>
-                    <button type="button" class="btn btn-default">6</button>
-                    <button type="button" class="btn btn-default">7</button>
-                    <button type="button" class="btn btn-default">8</button>
-                    <button type="button" class="btn btn-default">9</button>
-                    <button type="button" class="btn btn-default">10</button>
-                    <button type="button" class="btn btn-default">11</button>
-                  </div>
-                -->
                 </div>
                 <div class="filtro">
                   <label class="label-filtros">Horario</label>
@@ -141,7 +117,7 @@
                       </label>
                     </div>
                 </div>
-                <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>
+                <button type="button" onclick=buscar() class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>
               </div>
             </div>            
           </div>
@@ -151,23 +127,15 @@
           </div>
           <!-- DIV DE LOS RESULTADOS -->
           <div class="col-xs-12 col-md-3" id="resultados-container">
-            <div class="panel panel-default">
+            <div class="panel panel-default ">
               <!-- Default panel contents -->
               <div class="panel-heading">
                 Resultados
-                <!-- ESTE LABEL SE AGREGARIA LUEGO DE CADA BUSQUEDA, MARCA LA CANT DE RESULTADO
-                  EN VERDAD, SERA CREADO POR JAVASCRIPT, INSERTANDOLO AQUI MEDIANTE DOM
-                  -->
-                  <span class="label label-success">4</span>
-                
+                  <span id="cant-res" class="label label-success"></span>
               </div>
               <!-- List group -->
-              <ul class="list-group">
-                <button id="res1" onclick=select(this) type="button" class="list-group-item">Patronato</button>
-                <button id="res2" onclick=select(this) type="button" class="list-group-item">La Cantera</button>
-                <button id="res3" onclick=select(this) type="button" class="list-group-item">Villa Mitre</button>
-                <button id="res4" onclick=select(this) type="button" class="list-group-item">Shopping FC</button>
-                <!-- cuando uno es seleccionado, se debe agregar el class "active" -->
+              <ul class="list-group panel-limit" id="lista-resultados">
+                <!-- Aqui iran los resultados cargados dinamicamente via js -->
               </ul>
             </div>
             

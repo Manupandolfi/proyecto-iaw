@@ -7,7 +7,7 @@ function distancia(){
 
 function start(){
 	//Metodos javascript que se ejecutaran al cargarse el body del html
-	
+	cargarCanchas(complejos);
 }
 
 function menos(){
@@ -104,32 +104,67 @@ function btnHorario(){
 	}
 }
 
-function select(element){
-	var btn1 = document.getElementById("res1");
-	var btn2 = document.getElementById("res2");
-	var btn3 = document.getElementById("res3");
-	var btn4 = document.getElementById("res4");
+function cargarCanchas(complejosACargar){
+	var lista = document.getElementById("lista-resultados");
+	//Vacio la lista de resultados
+	while(lista.hasChildNodes())
+		lista.removeChild(lista.firstChild);
+	//Seteo la cantidad de resultados, que se van a cargar
+	document.getElementById("cant-res").innerHTML = complejosACargar.length;
+	for(i=0 ; i<complejosACargar.length ; i++){
+		var div = document.createElement("DIV");
+		var id = "res-"+i;
+		div.setAttribute("id",id);
+		var button = document.createElement("BUTTON");
+		button.setAttribute("onclick","select(this)");
+		button.setAttribute("type","button");
+		button.setAttribute("class","list-group-item");
+		var titulo = document.createElement("P");
+		var subtitulo = document.createElement("P");
+		titulo.setAttribute("class","titulo-res");
+		subtitulo.setAttribute("class","subtitulo-res");
+		titulo.innerHTML = complejosACargar[i].nombre;
+		subtitulo.innerHTML = complejosACargar[i].direccion;
+		button.append(titulo);
+		button.append(subtitulo);
+		div.append(button);
+		lista.append(div);
+	}
+}
 
-	if(element == btn1){
-		btn1.classList.add("active");
-		btn2.classList.remove("active");
-		btn3.classList.remove("active");
-		btn4.classList.remove("active");
+function buscar() {
+	var nombre = document.getElementById("nombre");
+	var distancia = document.getElementById("range-distancia");
+	var tamanio = document.getElementById("input-tamanio");
+	var resultado = complejos.slice();
+	var aux = [];
+	if(nombre.value!=""){
+		for(i = 0; i<resultado.length ; i++){
+			//Si el nombre ingresado tiene coincidencia con el nombre del complejo
+			if(resultado[i].nombre.toLowerCase().search(nombre.value.toLowerCase())!=-1){
+				aux.push(resultado[i]);
+			}
+		}
+		resultado = aux.slice();
+		aux = [];
 	}
-	else if(element == btn2){
-		btn2.classList.add("active");
-		btn1.classList.remove("active");
-		btn3.classList.remove("active");
-		btn4.classList.remove("active");
-	}else if(element == btn3){
-		btn3.classList.add("active");
-		btn2.classList.remove("active");
-		btn1.classList.remove("active");
-		btn4.classList.remove("active");
-	}else if(element == btn4){
-		btn4.classList.add("active");
-		btn2.classList.remove("active");
-		btn3.classList.remove("active");
-		btn1.classList.remove("active");
+	if(tamanio.value!="N/D"){
+		for(j = 0; j<resultado.length ; j++){
+			if(tieneCancha(resultado[j].canchas,tamanio.value)){
+				aux.push(resultado[j]);
+			}
+		}
+		resultado = aux.slice();
+		aux = [];
 	}
+	cargarCanchas(resultado);
+	//Falta filtrar por distancia y por horario
+}
+
+function tieneCancha(canchas,valor){
+	for(k=0; k<canchas.length ; k++){
+		if(canchas[k].tamanio==valor)
+			return true;
+	}
+	return false;
 }
