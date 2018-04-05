@@ -155,7 +155,7 @@ function select(complejoId){
 	//Funcion para establecer en el mapa el complejo seleccionado
 	var target = null;
 	for(i=0; i<jsonComplejos.length && target==null; i++)
-		if(jsonComplejos[i].id = complejoId)
+		if(jsonComplejos[i].id == complejoId)
 			target = jsonComplejos[i];
 	centrarMapa(target);
 }

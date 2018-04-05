@@ -78,7 +78,7 @@
                   <label class="label-filtros">Distancia:&nbsp;</label><label id="valor-distancia"></label>
                   <button id="btn-distancia" onclick=toggleBtnDistancia() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
                   <div id="contenido-distancia" class="get-out">
-                    <input id="range-distancia" type="range" min=1 max=15 value=2 step=1 oninput="distancia()">
+                    <input id="range-distancia" type="range" min=1 max=8 value=8 step=0.5 oninput="distancia()">
                   </div>
                 </div>
 
@@ -86,9 +86,9 @@
                   <label class="label-filtros">Tamaño</label>
                   <button id="btn-tamanio" onclick=toggleBtnTamanio() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
                   <div id="contenido-tamanio" class="get-out">
-                    <button id="btn-menos" class="btn btn-default btn-menos" onclick=menos()><span class="glyphicon glyphicon-minus"></span></button>
+                    <button id="btn-menos" class="btn btn-default btn-menos" onclick=menos()><span class="glyphicon glyphicon-menu-left"></span></button>
                     <input class="form-control input-tamanio" id="input-tamanio" type="text" value="Todas" readonly>
-                    <button id="btn-mas" class="btn btn-default btn-mas" onclick=mas()><span class="glyphicon glyphicon-plus"></span></button>
+                    <button id="btn-mas" class="btn btn-default btn-mas" onclick=mas()><span class="glyphicon glyphicon-menu-right"></span></button>
                   </div>
                 </div>
                 <div class="filtro">
