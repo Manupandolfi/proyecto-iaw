@@ -122,7 +122,7 @@ function buscar() {
 		aux = [];
 	}
 	//Si especificaron un tamanio de cancha, entonces filtro por tamanio
-	if($("input-tamanio").val()!="Todas"){
+	if($("#input-tamanio").val()!="Todas"){
 		for(j = 0; j<resultado.length ; j++){
 			//Pregunto si el complejo j tiene una cancha del tamanio en cuestion
 			if(tieneCancha(resultado[j].canchas,$("input-tamanio").val())){
@@ -134,7 +134,7 @@ function buscar() {
 	}
 	//Si se especifico un rango de distancia menor a 15km, filtro por distancia
 	if($("#range-distancia").val()<15){
-		resultado = filtrarDistancia(resultado,distancia.value);
+		resultado = filtrarDistancia(resultado,$("#range-distancia").val());
 	}
 
 	//Cargo las canchas en el panel resultado
