@@ -1,167 +1,149 @@
 function distancia(){
-	var slide = $("#range-distancia");
-	var out = $("#valor-distancia");
-	out.innerHTML = slide.value+" km";
+	//Funcionpara que cada vez que se modifica el slider de distancia, se actualice el label con su valor
+	$("#valor-distancia").text($("#range-distancia").val()+" km");
 }
 
 
 function start(){
 	//Metodos javascript que se ejecutaran al cargarse el body del html
-	cargarCanchas(complejos);
+	cargarCanchas(jsonComplejos);
 }
 
 function menos(){
-	var inputTamanio = document.getElementById("input-tamanio");
-	var i = parseInt(inputTamanio.value);
-	//Si el valor es mayor a 4, entonces puedo disminuir
-  	if(i>4){
-  		inputTamanio.value = i-1;
+	//Funcion para restar en 1 el tamaño de la cancha a buscar
+	//Si esta seleccionado todas, vuelvo al tamaño mas grande
+	if($("#input-tamanio").val()=="Todas"){
+  		$("#input-tamanio").val(11);
   	}
-
+  	else{
+		 var i = parseInt($("#input-tamanio").val());
+		//Si el valor es menor a 11, entonces puedo incrementar
+	  	if(i>4){
+	  		$("#input-tamanio").val(i-1);
+	  	}else{
+	  		//Sino, vuelvo a Todas
+	  		$("#input-tamanio").val("Todas");
+	  	}
+	}
 }
 
 function mas(){
-	var inputTamanio = document.getElementById("input-tamanio");
-	var i = parseInt(inputTamanio.value);
-	//Si el valor es menor a 11, entonces puedo incrementar
-  	if(i<11){
-  		inputTamanio.value = i+1;
+	//Funcion para restar en 1 el tamaño de la cancha a buscar
+	//Si esta seleccionado todas, vuelvo al tamaño mas pequeño
+	if($("#input-tamanio").val()=="Todas"){
+  		$("#input-tamanio").val(4);
   	}
-}
-
-function btnNombre(){
-	var btn = document.getElementById("btn-nombre");
-	var txt = document.getElementById("nombre");
-	if(btn.classList.contains("btn-add")){
-		btn.classList.remove("btn-add");
-		btn.classList.remove("glyphicon-plus");
-		btn.classList.add("btn-remove");
-		btn.classList.add("glyphicon-minus");
-		txt.classList.remove("get-out");
-	}else{
-		btn.classList.remove("btn-remove");
-		btn.classList.remove("glyphicon-minus");
-		btn.classList.add("btn-add");
-		btn.classList.add("glyphicon-plus");
-		txt.classList.add("get-out");
+  	else{
+		 var i = parseInt($("#input-tamanio").val());
+		//Si el valor es menor a 11, entonces puedo incrementar
+	  	if(i<11){
+	  		$("#input-tamanio").val(i+1);
+	  	}else{
+	  		//Sino, vuelvo a Todas
+	  		$("#input-tamanio").val("Todas");
+	  	}
 	}
 }
 
-function btnDistancia(){
+function toggleMasMenos(boton){
+	//Funcion para hacer toggle del boton +/- pasado por parametro
+	boton.toggleClass('btn-add');
+	boton.toggleClass('btn-remove');
+	boton.toggleClass("glyphicon-plus");
+	boton.toggleClass("glyphicon-minus");	
+}
+
+function toggleBtnNombre(){
+	//Funcion para hacer toggle del campo nombre de complejo. Hago toggle del boton +/- y lo pongo o quito al campo
+	toggleMasMenos($("#btn-nombre"));
+	$("#nombre").toggleClass('get-out');
+}
+
+function toggleBtnDistancia(){
+	//Funcion para hacer toggle del campo distancia de complejo. Hago toggle del boton +/- y lo pongo o quito al campo
 	distancia();
-	var btn = document.getElementById("btn-distancia");
-	var txt = document.getElementById("contenido-distancia");
-	if(btn.classList.contains("btn-add")){
-		btn.classList.remove("btn-add");
-		btn.classList.remove("glyphicon-plus");
-		btn.classList.add("btn-remove");
-		btn.classList.add("glyphicon-minus");
-		txt.classList.remove("get-out");
-		document.getElementById("valor-distancia").classList.remove("get-out");
-	}else{
-		btn.classList.remove("btn-remove");
-		btn.classList.remove("glyphicon-minus");
-		btn.classList.add("btn-add");
-		btn.classList.add("glyphicon-plus");
-		txt.classList.add("get-out");
-		document.getElementById("valor-distancia").classList.add("get-out");
-	}
+	toggleMasMenos($("#btn-distancia"));
+	$("#contenido-distancia").toggleClass('get-out');
 }
 
-function btnTamanio(){
-	var btn = document.getElementById("btn-tamanio");
-	var txt = document.getElementById("contenido-tamanio");
-	if(btn.classList.contains("btn-add")){
-		btn.classList.remove("btn-add");
-		btn.classList.remove("glyphicon-plus");
-		btn.classList.add("btn-remove");
-		btn.classList.add("glyphicon-minus");
-		txt.classList.remove("get-out");
-	}else{
-		btn.classList.remove("btn-remove");
-		btn.classList.remove("glyphicon-minus");
-		btn.classList.add("btn-add");
-		btn.classList.add("glyphicon-plus");
-		txt.classList.add("get-out");
-	}
+function toggleBtnTamanio(){
+	//Funcion para hacer toggle del campo tamanio de complejo. Hago toggle del boton +/- y lo pongo o quito al campo
+	toggleMasMenos($("#btn-tamanio"));
+	$("#contenido-tamanio").toggleClass('get-out');
 }
 
-function btnHorario(){
-	var btn = document.getElementById("btn-horario");
-	var txt = document.getElementById("contenido-horario");
-	if(btn.classList.contains("btn-add")){
-		btn.classList.remove("btn-add");
-		btn.classList.remove("glyphicon-plus");
-		btn.classList.add("btn-remove");
-		btn.classList.add("glyphicon-minus");
-		txt.classList.remove("get-out");
-	}else{
-		btn.classList.remove("btn-remove");
-		btn.classList.remove("glyphicon-minus");
-		btn.classList.add("btn-add");
-		btn.classList.add("glyphicon-plus");
-		txt.classList.add("get-out");
-	}
+function toggleBtnHorario(){
+	//Funcion para hacer toggle del campo horario de complejo. Hago toggle del boton +/- y lo pongo o quito al campo
+	toggleMasMenos($("#btn-horario"));
+	$("#contenido-horario").toggleClass('get-out');
 }
 
 function cargarCanchas(complejosACargar){
-	var lista = document.getElementById("lista-resultados");
+	//Esta funcion carga las canchas indicadas por parametro en el panel de resultados
+	var lista = $("#lista-resultados");
 	//Vacio la lista de resultados
-	while(lista.hasChildNodes())
-		lista.removeChild(lista.firstChild);
+	lista.empty();
 	//Seteo la cantidad de resultados, que se van a cargar
-	document.getElementById("cant-res").innerHTML = complejosACargar.length;
-	for(i=0 ; i<complejosACargar.length ; i++){
-		var div = document.createElement("DIV");
-		var id = "res-"+i;
-		div.setAttribute("id",id);
-		var button = document.createElement("BUTTON");
-		button.setAttribute("onclick","select(this)");
-		button.setAttribute("type","button");
-		button.setAttribute("class","list-group-item");
-		var titulo = document.createElement("P");
-		var subtitulo = document.createElement("P");
-		titulo.setAttribute("class","titulo-res");
-		subtitulo.setAttribute("class","subtitulo-res");
-		titulo.innerHTML = complejosACargar[i].nombre;
-		subtitulo.innerHTML = complejosACargar[i].direccion;
-		button.append(titulo);
-		button.append(subtitulo);
+	$("#cant-res").text(complejosACargar.length);
+	//for(i=0 ; i<complejosACargar.length ; i++){
+	for(var i in complejosACargar){
+		//Para cada resultado, voy a crear un div con su respectivo id del complejo
+		var div = $('<div></div>');
+		div.attr("id","res-"+complejosACargar[i].id);
+		//Creo el boton que estara en el div y representa al complejo
+		var button = $('<button></button>');
+		button.attr({
+			onclick: "select("+complejosACargar[i].id+")", //Al clickear en un res se selecciona el complejo segun su id
+			type: 'button',
+			class: 'list-group-item'
+		});
+		var titulo = $('<p></p>').attr('class', 'titulo-res').text(complejosACargar[i].nombre);
+		var subtitulo = $('<p></p>').attr('class', 'subtitulo-res').text(complejosACargar[i].direccion);
+		//Pongo el nombre(titulo) y direccion(subtitulo) en el boton, que lo pongo en el div, que lo pongo en la lista de resultados 
+		button.append(titulo,subtitulo);
 		div.append(button);
 		lista.append(div);
 	}
 }
 
 function buscar() {
-	var nombre = document.getElementById("nombre");
-	var distancia = document.getElementById("range-distancia");
-	var tamanio = document.getElementById("input-tamanio");
-	var resultado = complejos.slice();
+	//Esta funcion filtra los complejos a partir de los parametros ingresados por el usuario
+	var resultado = jsonComplejos.slice();
 	var aux = [];
-	if(nombre.value!=""){
+	//Si no dejaron vacio el campo nombre, entonces filtro por nombre
+	if($("#nombre").val()!=""){
 		for(i = 0; i<resultado.length ; i++){
 			//Si el nombre ingresado tiene coincidencia con el nombre del complejo
-			if(resultado[i].nombre.toLowerCase().search(nombre.value.toLowerCase())!=-1){
+			if(resultado[i].nombre.toLowerCase().search($("#nombre").val().toLowerCase())!=-1){
 				aux.push(resultado[i]);
 			}
 		}
 		resultado = aux.slice();
 		aux = [];
 	}
-	if(tamanio.value!="N/D"){
+	//Si especificaron un tamanio de cancha, entonces filtro por tamanio
+	if($("input-tamanio").val()!="Todas"){
 		for(j = 0; j<resultado.length ; j++){
-			if(tieneCancha(resultado[j].canchas,tamanio.value)){
+			//Pregunto si el complejo j tiene una cancha del tamanio en cuestion
+			if(tieneCancha(resultado[j].canchas,$("input-tamanio").val())){
 				aux.push(resultado[j]);
 			}
 		}
 		resultado = aux.slice();
 		aux = [];
 	}
+	//Si se especifico un rango de distancia menor a 15km, filtro por distancia
+	if($("#range-distancia").val()<15){
+		resultado = filtrarDistancia(resultado,distancia.value);
+	}
+
+	//Cargo las canchas en el panel resultado
 	cargarCanchas(resultado);
-	//Falta filtrar por distancia y por horario
+	//Falta filtrar por horario
 }
 
 function tieneCancha(canchas,valor){
+	//Funcion para comprobar si un conjunto de canchas tiene una cancha de tamanio 'valor'
 	for(k=0; k<canchas.length ; k++){
 		if(canchas[k].tamanio==valor)
 			return true;
@@ -169,6 +151,11 @@ function tieneCancha(canchas,valor){
 	return false;
 }
 
-function select(element){
-	
+function select(complejoId){
+	//Funcion para establecer en el mapa el complejo seleccionado
+	var target = null;
+	for(i=0; i<jsonComplejos.length && target==null; i++)
+		if(jsonComplejos[i].id = complejoId)
+			target = jsonComplejos[i];
+	centrarMapa(target);
 }

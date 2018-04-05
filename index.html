@@ -71,12 +71,12 @@
               <div class="panel-body">
                 <div class="filtro">
                   <label class="label-filtros">Nombre</label>
-                  <button id="btn-nombre" onclick=btnNombre() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
+                  <button id="btn-nombre" onclick=toggleBtnNombre() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
                   <input id="nombre" type="text" class="form-control get-out" placeholder="Cancha" autofocus>
                 </div>
                 <div class="filtro">
                   <label class="label-filtros">Distancia:&nbsp;</label><label id="valor-distancia"></label>
-                  <button id="btn-distancia" onclick=btnDistancia() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
+                  <button id="btn-distancia" onclick=toggleBtnDistancia() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
                   <div id="contenido-distancia" class="get-out">
                     <input id="range-distancia" type="range" min=1 max=15 value=2 step=1 oninput="distancia()">
                   </div>
@@ -84,16 +84,16 @@
 
                 <div class="filtro">
                   <label class="label-filtros">Tamaño</label>
-                  <button id="btn-tamanio" onclick=btnTamanio() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
+                  <button id="btn-tamanio" onclick=toggleBtnTamanio() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
                   <div id="contenido-tamanio" class="get-out">
                     <button id="btn-menos" class="btn btn-default btn-menos" onclick=menos()><span class="glyphicon glyphicon-minus"></span></button>
-                    <input class="form-control input-tamanio" id="input-tamanio" type="text" value=5 readonly>
+                    <input class="form-control input-tamanio" id="input-tamanio" type="text" value="Todas" readonly>
                     <button id="btn-mas" class="btn btn-default btn-mas" onclick=mas()><span class="glyphicon glyphicon-plus"></span></button>
                   </div>
                 </div>
                 <div class="filtro">
                   <label class="label-filtros">Horario</label>
-                  <button id="btn-horario" onclick=btnHorario() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
+                  <button id="btn-horario" onclick=toggleBtnHorario() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
                     <div id="contenido-horario" class="btn-group get-out" data-toggle="buttons">
                       <label class="btn btn-default btn-sm">
                         <input type="radio" name="options" id="rad-lunes" chacked>L
