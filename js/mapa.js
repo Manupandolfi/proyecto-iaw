@@ -160,8 +160,8 @@ function getKilometros(lat1,lon1,lat2,lon2){
 
  function centrarMapa(complejo){
         var pos = {
-          lat = complejo.coordenadas[0],
-          lng = complejo.coordenadas[1]
+          lat: complejo.coordenadas[0],
+          lng: complejo.coordenadas[1]
         }
         map.setCenter(pos);
         map.setZoom(17);
