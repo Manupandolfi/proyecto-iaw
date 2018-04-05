@@ -1,6 +1,6 @@
 function distancia(){
-	var slide = document.getElementById("range-distancia");
-	var out = document.getElementById("valor-distancia");
+	var slide = $("#range-distancia");
+	var out = $("#valor-distancia");
 	out.innerHTML = slide.value+" km";
 }
 
@@ -167,4 +167,8 @@ function tieneCancha(canchas,valor){
 			return true;
 	}
 	return false;
+}
+
+function select(element){
+	
 }
