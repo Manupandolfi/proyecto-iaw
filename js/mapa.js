@@ -125,8 +125,9 @@ function cargarComplejos() {
           var index;
           for (index = 0; index < jsonComplejos.length; ++index) {
               var complejo = jsonComplejos[index];
-              complejo.marcador = crearMarcador(parseFloat(complejo.coordenadas[0]),parseFloat(complejo.coordenadas[1]));
+              complejo.marcador = crearMarcador(parseFloat(complejo.coordenadas[0]),parseFloat(complejo.coordenadas[1]),complejo.id);
               complejos[index] = complejo;
+
             }
 }
 
@@ -155,8 +156,7 @@ function crearInfoWindow(complejoID){
 }
 
 function recuperarStringHorarios(complejo){
-  var borde = "";
-  var string = '<table'+borde+'><tr><th>L</th><th>M</th><th>M</th><th>J</th><th>V</th><th>S</th><th>D</th></tr><tr>';
+  var string = '<table class = "infowin"><tr><th>L</th><th>M</th><th>M</th><th>J</th><th>V</th><th>S</th><th>D</th></tr><tr>';
     $.each(complejo.horarios,function(i,k){
             string+='<td>'+k+'</td>';
   });
@@ -173,12 +173,16 @@ function recuperarStringCanchas(complejo){
   string+='</table>';
   return string;
 }
-function crearMarcador(lati,long){
+function crearMarcador(lati,long,id){
    marker = new google.maps.Marker({
    map: map,
   // draggable: true,
    //animation: google.maps.Animation.DROP,
    position: {lat: lati, lng: long}
+ });
+ marker.addListener('click',function(){
+
+       crearInfoWindow(id);
  });
 /*
   marker.setIcon("res/pincho.png");

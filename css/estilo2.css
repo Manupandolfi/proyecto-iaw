@@ -1,0 +1,10 @@
+.infowin {
+  background-color: #a5215200;
+  border-style: solid;
+  border-width: thin;
+  border-spacing: 10px;
+}
+
+.panel {
+    background: rgba(0,0,0,0.8);
+}
