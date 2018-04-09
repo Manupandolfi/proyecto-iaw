@@ -2,6 +2,7 @@ var complejos = new Array();
 var map;
 var posUsuario;
 var circulo = null;
+
 function initMap() {
         crearMapa();
         geolocacion();
@@ -101,7 +102,7 @@ function filtrarDistancia(resultados,distancia){
                 complejos[i].marcador.setMap(null);
 
           }
-
+          map.setZoom(12);
           return filtrado;
 }
 

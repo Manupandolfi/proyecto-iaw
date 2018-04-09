@@ -7,6 +7,7 @@ function distancia(){
 function start(){
 	//Metodos javascript que se ejecutaran al cargarse el body del html
 	cargarCanchas(jsonComplejos);
+	seleccionarEstilo();
 }
 
 function menos(){
@@ -56,26 +57,26 @@ function toggleMasMenos(boton){
 function toggleBtnNombre(){
 	//Funcion para hacer toggle del campo nombre de complejo. Hago toggle del boton +/- y lo pongo o quito al campo
 	toggleMasMenos($("#btn-nombre"));
-	$("#nombre").toggleClass('get-out');
+	$("#nombre").fadeToggle();
 }
 
 function toggleBtnDistancia(){
 	//Funcion para hacer toggle del campo distancia de complejo. Hago toggle del boton +/- y lo pongo o quito al campo
 	distancia();
 	toggleMasMenos($("#btn-distancia"));
-	$("#contenido-distancia").toggleClass('get-out');
+	$("#contenido-distancia").fadeToggle();
 }
 
 function toggleBtnTamanio(){
 	//Funcion para hacer toggle del campo tamanio de complejo. Hago toggle del boton +/- y lo pongo o quito al campo
 	toggleMasMenos($("#btn-tamanio"));
-	$("#contenido-tamanio").toggleClass('get-out');
+	$("#contenido-tamanio").fadeToggle();
 }
 
 function toggleBtnHorario(){
 	//Funcion para hacer toggle del campo horario de complejo. Hago toggle del boton +/- y lo pongo o quito al campo
 	toggleMasMenos($("#btn-horario"));
-	$("#contenido-horario").toggleClass('get-out');
+	$("#contenido-horario").fadeToggle();
 }
 
 function cargarCanchas(complejosACargar){
@@ -139,6 +140,7 @@ function buscar() {
 
 	//Cargo las canchas en el panel resultado
 	cargarCanchas(resultado);
+	ocultarComentarios();
 	//Falta filtrar por horario
 }
 
@@ -153,9 +155,42 @@ function tieneCancha(canchas,valor){
 
 function select(complejoId){
 	//Funcion para establecer en el mapa el complejo seleccionado
+	var target = getComplejo(complejoId);
+	centrarMapa(target);
+	mostrarComentarios(target);
+	$("#btn-comment").attr('onclick', 'comentar('+complejoId+')');
+}
+
+function getComplejo(complejoId){
+	//A partir del id de un complejo, retorna ese complejo
 	var target = null;
 	for(i=0; i<jsonComplejos.length && target==null; i++)
 		if(jsonComplejos[i].id == complejoId)
 			target = jsonComplejos[i];
-	centrarMapa(target);
+	return target;
+}
+
+function cambioEstilo(nro){
+	//Establece un estilo de pagina
+	setObject('estilo',nro);
+	if(nro==1){
+		//setear estilo 1
+	}
+	else{
+		//setear estilo 2
+	}
+}
+
+function seleccionarEstilo(){
+	//Esta funcion se ejecuta al iniciar, para saber que estilo seteo el usuario
+	var estilo = getObject('estilo');
+	//Si es distinto a nulo, es porque seteo algo
+	if(estilo)
+		if(estilo == 1)
+			cambioEstilo(1);
+		else
+			cambioEstilo(2);
+	else
+		//Sino, pongo estilo 1 por defecto
+		setObject('estilo',1);
 }
