@@ -27,7 +27,71 @@ function crearMapa(){
             stylers: [
               { visibility: "off" }
             ]
-          }
+          },
+           {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+           {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+           {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+           {
+             featureType: 'administrative.locality',
+             elementType: 'labels.text.fill',
+             stylers: [{color: '#d59563'}]
+           },
+           {
+             featureType: 'road',
+             elementType: 'geometry',
+             stylers: [{color: '#38414e'}]
+           },
+           {
+             featureType: 'road',
+             elementType: 'geometry.stroke',
+             stylers: [{color: '#212a37'}]
+           },
+           {
+             featureType: 'road',
+             elementType: 'labels.text.fill',
+             stylers: [{color: '#9ca5b3'}]
+           },
+           {
+             featureType: 'road.highway',
+             elementType: 'geometry',
+             stylers: [{color: '#746855'}]
+           },
+           {
+             featureType: 'road.highway',
+             elementType: 'geometry.stroke',
+             stylers: [{color: '#1f2835'}]
+           },
+           {
+             featureType: 'road.highway',
+             elementType: 'labels.text.fill',
+             stylers: [{color: '#f3d19c'}]
+           },
+           {
+             featureType: 'transit',
+             elementType: 'geometry',
+             stylers: [{color: '#2f3948'}]
+           },
+           {
+             featureType: 'transit.station',
+             elementType: 'labels.text.fill',
+             stylers: [{color: '#d59563'}]
+           },
+           {
+             featureType: 'water',
+             elementType: 'geometry',
+             stylers: [{color: '#17263c'}]
+           },
+           {
+             featureType: 'water',
+             elementType: 'labels.text.fill',
+             stylers: [{color: '#515c6d'}]
+           },
+           {
+             featureType: 'water',
+             elementType: 'labels.text.stroke',
+             stylers: [{color: '#17263c'}]
+           }
+
         ]
   });
 
@@ -66,6 +130,49 @@ function cargarComplejos() {
             }
 }
 
+function crearInfoWindow(complejoID){
+  var infoWindow = new google.maps.InfoWindow({map: map});
+  var complejo = getComplejo(complejoID);
+  var pos = {
+          lat : parseFloat(complejo.coordenadas[0]),
+          lng : parseFloat(complejo.coordenadas[1])
+    };
+    stringCanchas = recuperarStringCanchas(complejo);
+    stringHorarios = recuperarStringHorarios(complejo);
+    var contentString = '<div id="content">'+
+           '<div id="siteNotice">'+
+           '</div>'+
+           '<h2 id="firstHeading" class="firstHeading">'+complejo.nombre+'</h2>'+
+           '<div id="bodyContent">'+
+           '<p><b>Telefono : </b>'+complejo.telefono+
+           '<p><b>Horarios : </b>'+stringHorarios+
+           '<p><b>Canchas : </b>'+ stringCanchas+
+           '</div>'+
+           '</div>';
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(contentString);
+
+}
+
+function recuperarStringHorarios(complejo){
+  var borde = "";
+  var string = '<table'+borde+'><tr><th>L</th><th>M</th><th>M</th><th>J</th><th>V</th><th>S</th><th>D</th></tr><tr>';
+    $.each(complejo.horarios,function(i,k){
+            string+='<td>'+k+'</td>';
+  });
+  string+='</tr></table>';
+  return string;
+}
+
+function recuperarStringCanchas(complejo){
+
+  var string = '<table>';
+    $.each(complejo.canchas,function(i,k){
+            string+='<tr><td>Futbol :'+k.tamanio+ '</td><td> - Material: '+k.material+'</td></tr>';
+  });
+  string+='</table>';
+  return string;
+}
 function crearMarcador(lati,long){
    marker = new google.maps.Marker({
    map: map,
@@ -113,10 +220,10 @@ function filtrarDistancia(resultados,distancia){
 
 function dibujarDistancia(distancia){
       if(circulo == null){    circulo = new google.maps.Circle({
-          strokeColor: '#FF0000',
+          strokeColor: '#A9F5F2',
           strokeOpacity: 0.9,
           strokeWeight: 2,
-          fillColor: '#FF0000',
+          fillColor: '#CEF6F5',
           fillOpacity: 0.35,
           map: map,
           center: posUsuario,
@@ -167,7 +274,8 @@ function getKilometros(lat1,lon1,lat2,lon2){
  }
 
  function centrarMapa(complejo){
-        circulo.setMap(null);
+        if (circulo != null)
+            circulo.setMap(null);
         var pos = {
           lat: parseFloat(complejo.coordenadas[0]),
           lng: parseFloat(complejo.coordenadas[1])
