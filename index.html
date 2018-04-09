@@ -5,7 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-      <title>Findball</title>
+      <title>La Caprichosa</title>
 
       
      
@@ -16,11 +16,12 @@
       <link href="css/resultados.css" rel="stylesheet">
       <link href="css/comentarios.css" rel="stylesheet">
 
+      <link href="css/estilo1.css" id="css-estilo" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet"> 
+
      <!-- <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script> -->
-      <script type="text/javascript" src="js/funciones.js"></script>
-      <script type="text/javascript" src="js/datos-coord.js"></script>
-      <script type="text/javascript" src="js/mapa.js"></script>
-      <script type="text/javascript" src="js/comentarios.js"></script>
+     
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -41,6 +42,8 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">Findball</a>
+              <img src="res/logo-blanco.svg" alt="Logo La Caprichosa" class="logo"></img>
+            </a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,7 +58,7 @@
                 </ul>
               </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right get-out">
+            <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Login</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -98,35 +101,6 @@
                       <button id="btn-mas" class="btn btn-default btn-mas" onclick=mas()><span class="glyphicon glyphicon-menu-right"></span></button>
                     </div>
                   </div>
-                  <!--
-                  <div class="filtro">
-                    <label class="label-filtros">Horario</label>
-                    <button id="btn-horario" onclick=toggleBtnHorario() class=" glyphicon glyphicon-plus btn-chico btn-add"></button>
-                      <div id="contenido-horario" class="btn-group get-out" data-toggle="buttons">
-                        <label class="btn btn-default btn-sm">
-                          <input type="radio" name="options" id="rad-lunes" chacked>L
-                        </label>
-                        <label class="btn btn-default btn-sm">
-                          <input type="radio" id="rad-martes">M
-                        </label>
-                        <label class="btn btn-default btn-sm">
-                          <input type="radio" id="rad-miercoles">M
-                        </label>
-                        <label class="btn btn-default btn-sm">
-                          <input type="radio" id="rad-jueves">J
-                        </label>
-                        <label class="btn btn-default btn-sm">
-                          <input type="radio" id="rad-viernes">V
-                        </label>
-                        <label class="btn btn-default btn-sm">
-                          <input type="radio" id="rad-sabado">S
-                        </label>
-                        <label class="btn btn-default btn-sm">
-                          <input type="radio" id="rad-domingo">D
-                        </label>
-                      </div>
-                  </div> -->
-
                   <button type="button" onclick=buscar() class="btn btn-info" style="margin-top: 10px"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>
                 </div>
               </div>
@@ -164,7 +138,7 @@
               <input id="nombre-comment" type="text" class="form-control" placeholder="Dejar en blanco para mensaje Anónimo...">
               <label>Comentario</label>  
               <textarea class="form-control input-comment" rows="5" id="input-comment" placeholder="Ingrese aquí su comentario..."></textarea> 
-              <button id="btn-comment" class="btn btn-info btn-comment boton"> Comentar</button>
+              <button id="btn-comment" class="btn btn-info btn-comment"> Comentar</button>
             </div>
           </div>
 
@@ -175,6 +149,10 @@
       <!-- FIN CONTAINER GENERAL -->
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+       <script type="text/javascript" src="js/funciones.js"></script>
+      <script type="text/javascript" src="js/datos-coord.js"></script> 
+      <script type="text/javascript" src="js/mapa.js"></script>
+      <script type="text/javascript" src="js/comentarios.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="js/bootstrap.min.js"></script>

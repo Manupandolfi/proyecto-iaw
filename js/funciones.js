@@ -6,6 +6,7 @@ function distancia(){
 
 function start(){
 	//Metodos javascript que se ejecutaran al cargarse el body del html
+	//var jsonComplejos = JSON.parse($.getJSON({'url': "json/datos.json", 'async': false}).responseText);
 	cargarCanchas(jsonComplejos);
 	seleccionarEstilo();
 }
@@ -126,15 +127,15 @@ function buscar() {
 	if($("#input-tamanio").val()!="Todas"){
 		for(j = 0; j<resultado.length ; j++){
 			//Pregunto si el complejo j tiene una cancha del tamanio en cuestion
-			if(tieneCancha(resultado[j].canchas,$("input-tamanio").val())){
+			if(tieneCancha(resultado[j].canchas,$("#input-tamanio").val())){
 				aux.push(resultado[j]);
 			}
 		}
 		resultado = aux.slice();
 		aux = [];
 	}
-	//Si se especifico un rango de distancia menor a 15km, filtro por distancia
-	if($("#range-distancia").val()<15){
+	//Si se especifico un rango de distancia menor a 8km, filtro por distancia
+	if($("#range-distancia").val()<8){
 		resultado = filtrarDistancia(resultado,$("#range-distancia").val());
 	}
 
@@ -175,9 +176,11 @@ function cambioEstilo(nro){
 	setObject('estilo',nro);
 	if(nro==1){
 		//setear estilo 1
+		$("#css-estilo").attr('href', 'css/estilo1.css');
 	}
 	else{
 		//setear estilo 2
+		$("#css-estilo").attr('href', 'css/estilo2.css');
 	}
 }
 
