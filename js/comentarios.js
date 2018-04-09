@@ -5,18 +5,27 @@ function comentar(complejoId){
 	var name = $("#nombre-comment").val(),
 		com = $("#input-comment").val(),
 		lista = getObject('comments-'+complejo.id);
-
-	if(lista){
-		//Si ya existia una lista de comentarios de este complejo, lo agrego a la lista y lo vuelvo a guardar
-		lista.push({nombre: name, contenido: com});
-		setObject('comments-'+complejo.id, lista);
-	}else{
-		//Si no existia, crea una nueva lista con solo este comentario
-		setObject('comments-'+complejo.id, [{nombre: name, contenido: com}]);
+	//Chequeamos que el comentario no sea vacio
+	if(com==""){
+		alert("El contenido del comentario no puede ser vacío.");
 	}
+	else{
+		//Si el usuario es vacio, entonces lo consideramos anonimo
+		if(name==""){
+			name = "Anónimo";
+		}
+		if(lista){
+			//Si ya existia una lista de comentarios de este complejo, lo agrego a la lista y lo vuelvo a guardar
+			lista.push({nombre: name, contenido: com});
+			setObject('comments-'+complejo.id, lista);
+		}else{
+			//Si no existia, crea una nueva lista con solo este comentario
+			setObject('comments-'+complejo.id, [{nombre: name, contenido: com}]);
+		}
 
-	//Muestro los comentarios del complejo actualizados
-	mostrarComentarios(complejo);
+		//Muestro los comentarios del complejo actualizados
+		mostrarComentarios(complejo);
+	}
 }
 
 function mostrarComentarios(complejo){
