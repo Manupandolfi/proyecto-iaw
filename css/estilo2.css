@@ -20,8 +20,6 @@
   background: rgba(0,0,0,0.8);
 }
 
-
-
 .panel-title{
   color: white;
 }
@@ -29,7 +27,11 @@
   color : white;
 }
 .body {
- background-image:url("../res/fondo2.png");
+ /*background-image:url("../res/fondo2.png");*/
+ background-color: rgb(20,20,20);
+ background-repeat:no-repeat;
+
+
 }
  /* CSS PARA LOS COMENTARIOS */
 
@@ -45,8 +47,16 @@
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{
       background-color: #000;
       width: 100%;
+      height: 100px;
 }
 
+.navbar-collapse.collapse{
+  height: 100px!important;
+}
+.navbar-default{
+  background: rgba(0,0,0,0.7);
+  border: none; 
+}
  .media-heading{
    color: white;
  }
