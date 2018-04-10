@@ -49,6 +49,7 @@ function mostrarComentarios(complejo){
 		icon.attr('class', 'glyphicon glyphicon-comment icono-comment');
 		div.attr('class', 'media well');
 		h4.attr('class', 'media-heading');
+		p.attr('class', 'text-comment');
 
 		//Seteo los textos del comentario
 		h4.text(k.nombre);
