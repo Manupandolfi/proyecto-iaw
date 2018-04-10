@@ -4,22 +4,26 @@
   border-width: thin;
   border-spacing: 10px;
 }
-
+/*css para los paneles laterales*/
 .panel {
     background: rgba(0,0,0,0.8);
+    column-span: all!important;
 }
 .panel-default{
   background: rgba(0,0,0,0.8);
   border-color: #000;
+  box-shadow: 1px -1px 12px 0px #dfe099;
+
 }
+
 .panel-default>.panel-heading{
     background: rgba(0,0,0,0.8);
     border-color: #000;
+    color: #fff;
 }
 .list-group-item{
   background: rgba(0,0,0,0.8);
 }
-
 .panel-title{
   color: white;
 }
@@ -27,11 +31,13 @@
   color : white;
 }
 .body {
- /*background-image:url("../res/fondo2.png");*/
- background-color: rgb(20,20,20);
+ background-image:url("../res/StadioJM.jpg");
+ background-color: rgb(0,0,0);
  background-repeat:no-repeat;
-
-
+ background-position: center center;
+}
+.titulo-ppal{
+  visibility: hidden;
 }
  /* CSS PARA LOS COMENTARIOS */
 
@@ -39,6 +45,8 @@
    background-color: #374a33;
    border-radius: 15px;
  }
+
+ /*CSS PARA LA CABECERA*/
 .logo{
   height: 80px;
   display: block;
@@ -49,17 +57,80 @@
       width: 100%;
       height: 100px;
 }
-
+.container-fluid {
+     padding-right: 0px;
+     padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
 .navbar-collapse.collapse{
   height: 100px!important;
+  box-shadow: -7px 3px 16px 0px #dfe099;
 }
+
+.navbar-default .navbar-nav > li > a{
+	color: white;
+   font-family: 'Bree Serif';
+    font-size: 20px;
+    text-transform: uppercase;
+}
+/*inicio modificadores de inicio,estilos y login*/
+.navbar-nav {
+    float: left;
+    margin: 20px;
+}
+.navbar-nav-right {
+    margin: -15px;
+}
+/*FIN*/
 .navbar-default{
   background: rgba(0,0,0,0.7);
-  border: none; 
+  border: none;
 }
  .media-heading{
    color: white;
  }
-.p {
-  color: white;
+
+/**/
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color: #fff;  /*cambio el colorde pasar por arriba en la barra*/
 }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: white; /*color de fondo para los botones activos*/
+background-color: white;
+}
+.dropdown-menu{
+  background-color: rgb(60,60,60);
+}
+  .navbar-default {
+    background-color: #0f006f;
+    border-color: #030033;
+}
+.dropdown-menu>li>a{
+  color: #fff;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #fff;
+  box-sizing: border-box;
+  text-decoration:none;
+  background-color: rgb(40,40,40);  /*cambio el color de los links en el dropdown*/
+   }
+
+ .nav > li > a:hover,
+ .nav > li > a:focus {
+    text-decoration: none;
+    background-color: white; /*cambio el color del rollover*/
+  }
+  .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+      background-color: #3c3b3b!important; /* para cambiar el color de fondo y de texto del boton estilos*/
+      border-color: #337ab7;
+      color: white!important;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+   color: white; /*cambio color de texto activo*/
+    }
