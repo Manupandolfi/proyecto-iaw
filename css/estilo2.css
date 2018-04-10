@@ -46,8 +46,8 @@
  /* CSS PARA LOS COMENTARIOS */
 
  .well{
-   background-color: rgb(40,40,40);
-   border-radius: 15px;
+  background-color: rgb(228, 214, 214);
+  opacity: 0.5;
  }
 
  /*CSS PARA LA CABECERA*/
