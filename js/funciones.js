@@ -1,14 +1,24 @@
+var jsonComplejos;
+
 function distancia(){
 	//Funcionpara que cada vez que se modifica el slider de distancia, se actualice el label con su valor
 	$("#valor-distancia").text($("#range-distancia").val()+" km");
 }
 
-
 function start(){
 	//Metodos javascript que se ejecutaran al cargarse el body del html
 	//var jsonComplejos = JSON.parse($.getJSON({'url': "json/datos.json", 'async': false}).responseText);
-	cargarCanchas(jsonComplejos);
+	cargarDatos();
 	seleccionarEstilo();
+
+}
+
+function cargarDatos(){
+	$.get('https://manupandolfi.github.io/proyecto-iaw/json/datos.json', function(data) {
+		jsonComplejos = data;
+		cargarCanchas(jsonComplejos);
+		cargarComplejos();
+	});
 }
 
 function menos(){

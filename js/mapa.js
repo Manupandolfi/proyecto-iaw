@@ -6,7 +6,7 @@ var circulo = null;
 function initMap() {
         crearMapa();
         geolocacion();
-        cargarComplejos();
+        
       }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
