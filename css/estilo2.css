@@ -31,10 +31,11 @@
   color : white;
 }
 .body {
- background-image:url("../res/StadioJM.jpg");
+ background-image:url("../res/fondito.jpg");
  background-color: rgb(0,0,0);
  background-repeat:no-repeat;
- background-position: center center;
+ background-position: center top;
+ padding-bottom: 200px;
 }
 .titulo-ppal{
   visibility: hidden;
