@@ -29,7 +29,7 @@
   color : white;
 }
 .body {
- background-image:url(//static.grandt.com.ar/gdt/imgs/v17/bgBuildTeam.jpg);
+ background-image:url("../res/fondo2.png");
 }
  /* CSS PARA LOS COMENTARIOS */
 
@@ -37,15 +37,13 @@
    background-color: #374a33;
    border-radius: 15px;
  }
-
-.logo {
-    width: 50px;
-    height: 50px;
+.logo{
+  height: 80px;
+  display: block;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{
       background-color: #000;
-      position: top;
       width: 100%;
 }
 
