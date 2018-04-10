@@ -98,3 +98,29 @@
 	padding-bottom: 5px;
 	margin-top: -10px;
 }
+
+.panel-default > .panel-heading {
+	background-color: #218c74;
+	color: white;
+	font-family: 'IBM Plex Sans', 'Arial', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+
+}
+
+.panel-default {
+	border-color: #218c74;
+}
+
+.panel-title{
+		font-size: 18px;
+}
+
+.btn-info{
+	width: 100%;
+	background-color: #218c74;
+	color: white; 
+	border: none;
+}
+
+
