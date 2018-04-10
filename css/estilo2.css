@@ -37,13 +37,16 @@
  background-position: center top;
  padding-bottom: 200px;
 }
+#titulo-comment{
+  visibility: hidden;
+}
 .titulo-ppal{
   visibility: hidden;
 }
  /* CSS PARA LOS COMENTARIOS */
 
  .well{
-   background-color: #374a33;
+   background-color: rgb(40,40,40);
    border-radius: 15px;
  }
 
