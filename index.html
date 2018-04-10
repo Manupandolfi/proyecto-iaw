@@ -7,8 +7,8 @@
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
       <title>La Caprichosa</title>
 
-
-
+      
+     
        <!-- Bootstrap -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/mapa.css" rel="stylesheet">
@@ -17,11 +17,11 @@
       <link href="css/comentarios.css" rel="stylesheet">
 
       <link href="css/estilo1.css" id="css-estilo" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet"> 
 
-     <!-- <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script> -->
-
+      <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+     
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -29,7 +29,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
     </head>
-    <body class = body onload="start()">
+    <body class="body" onload="start()">
       <!-- HEADER -->
       <nav class="navbar navbar-default ">
         <div class="container-fluid">
@@ -41,7 +41,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Findball</a>
+            <a class="navbar-brand" href="#">
               <img src="res/logo-blanco.svg" alt="Logo La Caprichosa" class="logo"></img>
             </a>
           </div>
@@ -49,7 +49,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Inicio </a></li>
+              <li class=""><a href="#">Inicio </a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estilos <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -72,7 +72,7 @@
           <!-- PRIMER ROW (FILTROS, MAPA Y RESULTADOS) -->
           <div id="row-map" class="row">
             <!-- DIV DE LOS FILTROS -->
-            <h2> Complejos de Futbol </h2>
+            <h2 class="titulo-ppal"> Complejos de Futbol </h2>
             <div class="col-xs-12 col-md-3 ">
               <div class="panel panel-default panel-size" id="panel-filtros">
                 <div class="panel-heading">
@@ -133,11 +133,11 @@
             <div id="comentarios"></div>
 
             <div id="add-comments">
-              <h3>Deja tu comentario</h3>
-              <label>Nombre</label>
+              <h3 class="deja-comments">Deja tu comentario</h3>
+              <label class="label-comments">Nombre</label>
               <input id="nombre-comment" type="text" class="form-control" placeholder="Dejar en blanco para mensaje Anónimo...">
-              <label>Comentario</label>
-              <textarea class="form-control input-comment" rows="5" id="input-comment" placeholder="Ingrese aquí su comentario..."></textarea>
+              <label class="label-comments">Comentario</label>  
+              <textarea class="form-control input-comment" rows="5" id="input-comment" placeholder="Ingrese aquí su comentario..."></textarea> 
               <button id="btn-comment" class="btn btn-info btn-comment"> Comentar</button>
             </div>
           </div>
@@ -150,10 +150,10 @@
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
        <script type="text/javascript" src="js/funciones.js"></script>
-      <script type="text/javascript" src="js/datos-coord.js"></script>
+      <script type="text/javascript" src="js/datos-coord.js"></script> 
       <script type="text/javascript" src="js/mapa.js"></script>
       <script type="text/javascript" src="js/comentarios.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--> 
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="js/bootstrap.min.js"></script>
     </body>
