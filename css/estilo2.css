@@ -8,3 +8,45 @@
 .panel {
     background: rgba(0,0,0,0.8);
 }
+
+.panel-size{
+  height: 440px;
+}
+
+.panel-default{
+  background: rgba(0,0,0,0.8);
+  border-color: #000;
+  border-radius: 15px;
+}
+.panel-default>.panel-heading{
+    background: rgba(0,0,0,0.1);
+    border-color: #000;
+}
+.list-group-item{
+  background: rgba(0,0,0,0.7);
+}
+
+
+
+.panel-title{
+  color: white;
+}
+.label-filtros{
+  color : white;
+}
+.body {
+ background-image:url(//static.grandt.com.ar/gdt/imgs/v17/bgBuildTeam.jpg);
+}
+ /* CSS PARA LOS COMENTARIOS */
+
+ .well{
+   background-color: #374a33;
+   border-radius: 15px;
+ }
+
+ .media-heading{
+   color: white;
+ }
+.p {
+  color: white;
+}
