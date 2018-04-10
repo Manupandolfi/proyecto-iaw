@@ -8,22 +8,16 @@
 .panel {
     background: rgba(0,0,0,0.8);
 }
-
-.panel-size{
-  height: 440px;
-}
-
 .panel-default{
   background: rgba(0,0,0,0.8);
   border-color: #000;
-  border-radius: 15px;
 }
 .panel-default>.panel-heading{
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.8);
     border-color: #000;
 }
 .list-group-item{
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.8);
 }
 
 
@@ -43,6 +37,17 @@
    background-color: #374a33;
    border-radius: 15px;
  }
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+      background-color: #000;
+      position: top;
+      width: 100%;
+}
 
  .media-heading{
    color: white;
