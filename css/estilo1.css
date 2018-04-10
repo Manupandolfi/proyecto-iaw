@@ -1,0 +1,100 @@
+.logo {
+	height: 80px;
+	/*background: url("../res/logo-blanco.svg") no-repeat;
+	background-size: 60%;*/	
+	display: block;
+	margin-right: 20px;
+	margin-top: -5px;
+}
+
+.navbar-default .navbar-nav > li > a{
+	background-color:#218c74;
+	color: white;
+    font-family: 'Fredoka One', 'Open Sans', 'Arial', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover{
+	color:#218c74;
+	background-color: white;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+	color: white;
+	background-color:#218c74;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+	color:#218c74;
+	background-color: white; 
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	margin-top: 20px;
+}
+
+.dropdown-menu > li > a{
+	color:white;
+	background-color:#218c74;
+	font-family: 'Fredoka One', 'Open Sans', 'Arial', cursive;
+	text-transform: uppercase;
+}
+
+.dropdown-menu{
+	padding: 0px 0px;
+}
+
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover{
+	color:#218c74;
+	background-color: white;
+}
+
+.navbar-toggle{
+	margin-top: 30px;
+}
+
+.active{
+	background-color: white;
+	color:#218c74;
+}
+
+.navbar-default {
+	min-height: 100px;
+	background-color:#218c74;
+	color:none;
+	border-radius: 0px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+/*	border-bottom-width: 5px;
+	border-bottom-color: #B9FCDF; */
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+	color: white;
+	background-color:#218c74;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover{
+	background-color: white;
+	color:#218c74;
+}
+
+.navbar-default .navbar-toggle{
+	border-color: white;
+	color:white;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+	background-color: white;
+}
+
+.titulo-ppal{
+	font-family: 'IBM Plex Sans', 'Arial', sans-serif;
+	border-bottom-width: 4px;
+	border-bottom-color:  #218c74;
+	border-bottom-style: solid;
+	padding-bottom: 5px;
+	margin-top: -10px;
+}
