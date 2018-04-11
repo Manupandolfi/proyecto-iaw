@@ -46,9 +46,27 @@
  /* CSS PARA LOS COMENTARIOS */
 
  .well{
-  background-color: rgb(228, 214, 214);
-  opacity: 0.5;
+    background-color: rgb(95, 117, 126);
+    box-shadow: -1px 4px 20px 0px rgb(27, 95, 146);
+    color: white;
  }
+
+ .deja-comments{
+   color: white;
+ }
+
+ .label-comments{
+   color:white;
+ }
+
+ .btn-info {
+    color: #fff;
+    background-color: #5f757e;
+    border-color: #dddede;
+    width: 25%;
+    padding: 15px;
+    margin-top: 15px;
+}
 
  /*CSS PARA LA CABECERA*/
 .logo{
