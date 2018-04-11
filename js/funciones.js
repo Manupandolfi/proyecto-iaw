@@ -14,7 +14,7 @@ function start(){
 }
 
 function cargarDatos(){
-	$.get('/json/datos.json', function(data) {
+	$.get('./json/datos.json', function(data) {
 		jsonComplejos = data;
 		cargarCanchas(jsonComplejos);
 		cargarComplejos();
