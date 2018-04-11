@@ -82,6 +82,7 @@ function toggleBtnTamanio(){
 	//Funcion para hacer toggle del campo tamanio de complejo. Hago toggle del boton +/- y lo pongo o quito al campo
 	toggleMasMenos($("#btn-tamanio"));
 	$("#contenido-tamanio").fadeToggle();
+
 }
 
 function toggleBtnHorario(){
@@ -145,9 +146,9 @@ function buscar() {
 		aux = [];
 	}
 	//Si se especifico un rango de distancia menor a 8km, filtro por distancia
-	if($("#range-distancia").val()<8){
+	//if($("#range-distancia").val()<8){
 		resultado = filtrarDistancia(resultado,$("#range-distancia").val());
-	}
+	//}
 
 	//Cargo las canchas en el panel resultado
 	cargarCanchas(resultado);
@@ -184,6 +185,11 @@ function getComplejo(complejoId){
 function cambioEstilo(nro){
 	//Establece un estilo de pagina
 	setObject('estilo',nro);
+	switch(nro){
+		case 0: {$("#css-estilo").attr('href', '');break;}
+		case 1: {$("#css-estilo").attr('href', 'css/estilo1.css');break;}
+		case 2: {$("#css-estilo").attr('href', 'css/estilo2.css');break;}
+	}/*
 	if(nro==1){
 		//setear estilo 1
 		$("#css-estilo").attr('href', 'css/estilo1.css');
@@ -191,7 +197,7 @@ function cambioEstilo(nro){
 	else{
 		//setear estilo 2
 		$("#css-estilo").attr('href', 'css/estilo2.css');
-	}
+	}*/
 }
 
 function seleccionarEstilo(){
@@ -199,10 +205,11 @@ function seleccionarEstilo(){
 	var estilo = getObject('estilo');
 	//Si es distinto a nulo, es porque seteo algo
 	if(estilo)
-		if(estilo == 1)
-			cambioEstilo(1);
-		else
-			cambioEstilo(2);
+		switch(estilo){
+			case 0: {cambioEstilo(0);break;}
+			case 1: {cambioEstilo(1);break;}
+			case 2: {cambioEstilo(2);break;}
+		}
 	else
 		//Sino, pongo estilo 1 por defecto
 		setObject('estilo',1);

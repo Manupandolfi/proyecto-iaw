@@ -123,10 +123,12 @@
 }
 
 .btn-info{
-	width: 100%;
+	width: 100% ;
+	font-size: 16px;
 	background-color: #218c74;
 	color: white; 
 	border: none;
+	font-family: 'IBM Plex Sans', 'Arial', sans-serif;
 }
 
 #cant-res{
@@ -230,9 +232,83 @@ input[type=range]::-ms-thumb {
 	border-bottom-color: #218c74;
 	text-align: center;
 	font-family: 'IBM Plex Sans', 'Arial', sans-serif;
-
+	box-shadow: none;
 }
 
 .glyphicon-menu-left, .glyphicon-menu-right{
 	font-size: 30px;
+}
+
+
+/*comentarios*/
+
+#titulo-comment{
+	font-family: 'IBM Plex Sans', 'Arial', sans-serif;
+	border-bottom-width: 4px;
+	border-bottom-color:  #218c74;
+	border-bottom-style: solid;
+	padding-bottom: 5px;
+}
+
+.deja-comments{
+	font-family: 'IBM Plex Sans', 'Arial', sans-serif;
+}
+
+#nombre-comment, #input-comment{
+	background-color: transparent;
+	border-left: none;
+	border-top: none;
+	border-right: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #218c74;
+	border-radius: 0px;
+	font-family: 'IBM Plex Sans', 'Arial', sans-serif;
+	box-shadow: none;
+	font-size: 18px; 
+}
+
+.label-comments{
+	font-family: 'IBM Plex Sans', 'Arial', sans-serif;
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+#input-comment{
+	height: 40px;
+}
+
+
+#nombre-comment:hover, #input-comment:hover, #nombre-comment:focus, #input-comment:focus{
+	border-bottom-width: 3px;
+}
+
+#input-comment:focus{
+	height: 200px;
+}
+
+#btn-comment{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	float: right;
+	width: 150px;
+	font-size: 20px;
+}
+
+.text-comment{
+	font-size: 16px;
+}
+
+.icono-comment {
+    color: #218c74;
+    opacity: 0.8;
+}
+
+.well{
+	background-color: transparent;
+
+}
+
+.media-heading{
+    color: #218c74;
+    font-weight: 700;
 }
