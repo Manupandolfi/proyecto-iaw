@@ -7,8 +7,8 @@
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
       <title>La Caprichosa</title>
 
-      
-     
+
+
        <!-- Bootstrap -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/mapa.css" rel="stylesheet">
@@ -17,12 +17,12 @@
       <link href="css/comentarios.css" rel="stylesheet">
 
       <link href="css/estilo1.css" id="css-estilo" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-      <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet"> 
-      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Raleway" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Raleway" rel="stylesheet">
 
       <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-     
+
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -71,6 +71,32 @@
       <!-- CONTENIDO GENERAL -->
       <div class="gral-container" id="gral-container">
         <div class="container">
+        <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal Geolocacion-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Aviso Importante</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="col-sm-6 col-xs-12">
+                    <p>Para mejorar la experiencia de usuario en este sitio le sugerimos que permita al navegador conocer su ubicacion,
+                          de lo contrario se utilizará una posición por defecto.</p>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                      <img src="/res/location.png">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal" onclick = "geolocacion()">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fin Modal -->
+
           <!-- PRIMER ROW (FILTROS, MAPA Y RESULTADOS) -->
           <div id="row-map" class="row">
             <!-- DIV DE LOS FILTROS -->
@@ -138,8 +164,8 @@
               <h3 class="deja-comments">Deja tu comentario</h3>
               <label class="label-comments">Nombre</label>
               <input id="nombre-comment" type="text" class="form-control" placeholder="Dejar en blanco para mensaje Anónimo...">
-              <label class="label-comments">Comentario</label>  
-              <textarea class="form-control input-comment" rows="5" id="input-comment" placeholder="Ingrese aquí su comentario..."></textarea> 
+              <label class="label-comments">Comentario</label>
+              <textarea class="form-control input-comment" rows="5" id="input-comment" placeholder="Ingrese aquí su comentario..."></textarea>
               <button id="btn-comment" class="btn btn-info btn-comment"> Comentar</button>
             </div>
           </div>
@@ -152,10 +178,10 @@
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
        <script type="text/javascript" src="js/funciones.js"></script>
-      <script type="text/javascript" src="js/datos-coord.js"></script> 
+      <script type="text/javascript" src="js/datos-coord.js"></script>
       <script type="text/javascript" src="js/mapa.js"></script>
       <script type="text/javascript" src="js/comentarios.js"></script>
-      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--> 
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="js/bootstrap.min.js"></script>
     </body>

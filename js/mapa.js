@@ -5,8 +5,8 @@ var circulo = null;
 
 function initMap() {
         crearMapa();
-        geolocacion();
-        
+        mimodal();
+
       }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -98,6 +98,7 @@ function crearMapa(){
 }
 
 function geolocacion(){
+
     var infoWindow = new google.maps.InfoWindow({map: map});
     //pido la geolocacion
     if (navigator.geolocation) {
@@ -276,6 +277,7 @@ function getKilometros(lat1,lon1,lat2,lon2){
    var d = R * c;
    return Math.round(d);
  }
+
 
  function centrarMapa(complejo){
         if (circulo != null)
