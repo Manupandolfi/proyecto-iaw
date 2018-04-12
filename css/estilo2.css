@@ -15,8 +15,20 @@
 /*  box-shadow: 1px 1px 20px 0px rgb(69, 140, 158);*/
   }
 
+.modal-body{
+  color:#000;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  padding: 0px;
+}
+.texto-modal{
+  padding-top: 40px;
+}
 
-
+.modal-header{
+  text-align: center;
+  font-weight: 700;
+}
 .panel-default>.panel-heading{
     background: rgba(0,0,0,0.8);
     border-color: #000;

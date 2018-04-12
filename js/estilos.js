@@ -28,5 +28,5 @@ function seleccionarEstilo(){
 		}
 	else
 		//Sino, pongo estilo 1 por defecto
-		setObject('estilo',1);
+		setObject('estilo',0);
 }
