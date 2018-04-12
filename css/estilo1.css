@@ -325,3 +325,19 @@ input[type=range]::-ms-thumb {
 	border-color: #218c74;
 }
 
+/*MODAL*/
+.modal-body{
+  color:#000;
+  font-family: 'IBM Plex Sans';
+  font-size: 18px;
+  padding: 0px;
+}
+.texto-modal{
+  padding-top: 40px;
+}
+
+.modal-header{
+	
+  text-align: center;
+  font-weight: 700;
+}

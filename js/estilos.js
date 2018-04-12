@@ -23,8 +23,8 @@ function seleccionarEstilo(){
 	if(estilo)
 		cambioEstilo(estilo);
 	else{
-		//Sino, pongo estilo 0 por defecto
-		setObject('estilo',0);
-		cambioEstilo(0);
+		//Sino, pongo estilo 1 por defecto
+		setObject('estilo',1);
+		cambioEstilo(1);
 	}
 }
