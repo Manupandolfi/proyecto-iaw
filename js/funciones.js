@@ -1,5 +1,15 @@
 var jsonComplejos;
 
+function mimodal(){
+/*modal de geolocacion*/
+	$(window).on('load',function(){
+			 $('#myModal').modal('show');
+	 });
+	 $('#myModal').on('hidden.bs.modal', function (e) {
+	         geolocacion();
+	     })
+}
+
 function distancia(){
 	//Funcionpara que cada vez que se modifica el slider de distancia, se actualice el label con su valor
 	$("#valor-distancia").text($("#range-distancia").val()+" km");
@@ -62,7 +72,7 @@ function toggleMasMenos(boton){
 	boton.toggleClass('btn-add');
 	boton.toggleClass('btn-remove');
 	boton.toggleClass("glyphicon-plus");
-	boton.toggleClass("glyphicon-minus");	
+	boton.toggleClass("glyphicon-minus");
 }
 
 function toggleBtnNombre(){
@@ -112,7 +122,7 @@ function cargarCanchas(complejosACargar){
 		});
 		var titulo = $('<p></p>').attr('class', 'titulo-res').text(complejosACargar[i].nombre);
 		var subtitulo = $('<p></p>').attr('class', 'subtitulo-res').text(complejosACargar[i].direccion);
-		//Pongo el nombre(titulo) y direccion(subtitulo) en el boton, que lo pongo en el div, que lo pongo en la lista de resultados 
+		//Pongo el nombre(titulo) y direccion(subtitulo) en el boton, que lo pongo en el div, que lo pongo en la lista de resultados
 		button.append(titulo,subtitulo);
 		div.append(button);
 		lista.append(div);
@@ -181,4 +191,3 @@ function getComplejo(complejoId){
 			target = jsonComplejos[i];
 	return target;
 }
-
